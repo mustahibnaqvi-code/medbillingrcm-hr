@@ -1,0 +1,6 @@
+[headers]
+  # Force all .js files in the assets folder to be served as JavaScript modules (MIME Type Fix)
+  [[headers]]
+    for = "/assets/*.js"
+    [headers.values]
+      Content-Type = "application/javascript; charset=UTF-8"
