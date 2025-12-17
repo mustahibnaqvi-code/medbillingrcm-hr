@@ -1,6 +1,10 @@
-[headers]
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Headers must be defined as an array of tables at the root level of the file.
+[[headers]]
   # Force all .js files in the assets folder to be served as JavaScript modules (MIME Type Fix)
-  [[headers]]
-    for = "/assets/*.js"
-    [headers.values]
-      Content-Type = "application/javascript; charset=UTF-8"
+  for = "/assets/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=UTF-8"
