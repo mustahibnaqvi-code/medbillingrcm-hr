@@ -8,3 +8,37 @@
   for = "/assets/*.js"
   [headers.values]
     Content-Type = "application/javascript; charset=UTF-8"
+```
+
+### 2. Initialize Git and Commit Changes
+
+Run these commands in your project directory (`my-mbrcm-portal`):
+
+```bash
+# Initialize a new Git repository
+git init
+
+# --- Set Author Identity (Necessary for Git Commit) ---
+git config --global user.email "mustahibnaqvi@gmail.com"
+git config --global user.name "mustahibnaqvi-code"
+
+# Add the new netlify.toml file and all configurations
+git add .
+
+# Commit your files
+git commit -m "Netlify config fix (netlify.toml) and final deployment cleanup"
+```
+
+### 3. Push to GitHub to Trigger Netlify Build
+
+Run the push command to send the clean configuration to GitHub:
+
+```bash
+# Push the code to the main branch
+# (Use your PAT for authentication)
+git push -u origin main
+```
+
+## Phase 3: Deployment
+
+Netlify will automatically detect this push and attempt a new build. After the build completes (usually 1-2 minutes), check your Netlify dashboard to confirm the deploy was successful, and then clear your browser cache before visiting the site again.
